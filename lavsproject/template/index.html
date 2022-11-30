@@ -1,0 +1,508 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ABC BANK WELCOMES YOU</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travello template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css' %}">
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ABC BANK</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="btn btn-secondary btn-block my_custom_button" width="50px" height="50px"  aria-current="page" href="credentials/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-secondary btn-block my_custom_button" width="50px" height="50px" href="credentials/register">Register</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Branches
+          </a>
+			{% for i in obj %}
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href=" https://en.wikipedia.org/wiki/Bank ">{{i}}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+<!--	<header class="header">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col">-->
+<!--					<div class="header_content d-flex flex-row align-items-center justify-content-start">-->
+<!--						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">-->
+<!--							<div class="logo"><a href="{% static 'index.html' %}">ABC BANK</a></div>-->
+<!--							<nav class="main_nav">-->
+<!--								<ul class="d-flex flex-row align-items-start justify-content-start">-->
+<!--									<li><a href="{% static 'index.html' %}">Home</a></li>-->
+
+<!--									{% if user.is_authenticated %}-->
+<!--									<li> Hello {{user.username}}</li>-->
+<!--									<li><a href="credentials/logout">Logout</a></li>-->
+
+<!--									{% else %}-->
+<!--									<li><a class="btn btn-secondary btn-block my_custom_button" width="50px" height="50px" href="credentials/register">Register</a></li>-->
+<!--									<li><a class="btn btn-secondary btn-block my_custom_button" width="50px" height="50px" href="credentials/login">Login</a></li>-->
+
+<!--									{% endif %}-->
+<!--	<li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            Branches-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--			  {% for i in obj %}-->
+<!--            <li><a class="dropdown-item" href="#">{{obj}}</a></li>-->
+<!--				{% endfor %}-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--	</ul>-->
+<!--	</nav>-->
+<!--							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>-->
+
+							<!-- Hamburger -->
+
+							<div class="hamburger ml-auto">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header_social d-flex flex-row align-items-center justify-content-start">
+			<ul class="d-flex flex-row align-items-start justify-content-start">
+				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu">
+		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+			<div class="menu_logo"><a href="index.html">Travello</a></div>
+			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
+		</div>
+		<div class="menu_content">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About us</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+		<div class="menu_social">
+			<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+			<ul class="d-flex flex-row align-items-start justify-content-start">
+				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="background_image"><img src="{% static 'images/abc2.jpg' %}" alt=""></div>
+	</div>
+
+<!--	&lt;!&ndash; Search &ndash;&gt;-->
+
+<!--	<div class="home_search">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col">-->
+<!--					<div class="home_search_container">-->
+<!--						<div class="home_search_title">Search for your trip</div>-->
+<!--						<div class="home_search_content">-->
+<!--							<form action="#" class="home_search_form" id="home_search_form">-->
+<!--								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">-->
+<!--									<input type="text" class="search_input search_input_1" placeholder="City" required="required">-->
+<!--									<input type="text" class="search_input search_input_2" placeholder="Departure" required="required">-->
+<!--									<input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">-->
+<!--									<input type="text" class="search_input search_input_4" placeholder="Budget" required="required">-->
+<!--									<button class="home_search_button">search</button>-->
+<!--								</div>-->
+<!--							</form>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+	<!-- About -->
+
+	<div class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">Strategic Planning for your next business</div>
+					<div class="section_title"><h2>A few words about us</h2></div>
+				</div>
+			</div>
+			<div class="row about_row">
+				<div class="col-lg-6">
+					<div class="about_content">
+						<div class="text_highlight">Loans for startups</div>
+						<div class="about_text">
+							<p>Online banking, also known as internet banking, web banking or home banking, is an electronic payment system that enables customers of a bank or other financial institution to conduct a range of financial transactions through the financial institution's website.
+							Some banks operate as a "direct bank", where they operate entirely via the internet or internet and telephone. They are different from "neobanks", which don't have depositary insurance.
+
+							</p>
+						</div>
+						<div class="button about_button"><a href="#">read more</a></div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about_image"><img src="{% static 'images/save.jpg' %}" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Milestones -->
+
+	<div class="milestones">
+		<div class="container">
+			<div class="row">
+				
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/mountain.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="17">0</div>
+						<div class="milestone_text">Startups</div>
+					</div>
+				</div>
+
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/island.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="213">0</div>
+						<div class="milestone_text">Loans</div>
+					</div>
+				</div>
+
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/camera.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="11923">0</div>
+						<div class="milestone_text">Accounts</div>
+					</div>
+				</div>
+
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/boat.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="15">0</div>
+						<div class="milestone_text">Insurance</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Why Choose Us -->
+
+	<div class="why">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src=" {% static 'images/why11.jpg' %}" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">How can we help you?</div>
+					<div class="section_title"><h2>Why choose us?</h2></div>
+				</div>
+			</div>
+			<div class="row why_row">
+				
+<!--				&lt;!&ndash; Why item &ndash;&gt;-->
+<!--				{% for i in result %}-->
+
+<!--				<div class="col-lg-4 why_col">-->
+<!--					<div class="why_item">-->
+<!--						<div class="why_image">-->
+<!--							<img src="{{i.image.url}}" alt="">-->
+<!--							<div class="why_icon d-flex flex-column align-items-center justify-content-center">-->
+<!--								<img src="{% static 'images/why_1.svg' %}" alt="">-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="why_content text-center">-->
+<!--							<div class="why_title">{{i.name}}</div>-->
+<!--							<div class="why_text">-->
+<!--								<p>{{i.details}}</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--					{% endfor %}-->
+<!--				&lt;!&ndash; Why item &ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="col-lg-4 why_col">&ndash;&gt;-->
+<!--&lt;!&ndash;					<div class="why_item">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_image">&ndash;&gt;-->
+<!--&lt;!&ndash;							<img src="{% static 'images/why_2.jpg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_icon d-flex flex-column align-items-center justify-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;								<img src="{% static 'images/why_2.svg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_content text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_title">Great Team</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_text">&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+
+<!--				&lt;!&ndash; Why item &ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="col-lg-4 why_col">&ndash;&gt;-->
+<!--&lt;!&ndash;					<div class="why_item">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_image">&ndash;&gt;-->
+<!--&lt;!&ndash;							<img src="{% static 'images/why_3.jpg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_icon d-flex flex-column align-items-center justify-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;								<img src="{% static 'images/why_3.svg' %}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="why_content text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_title">Best Deals</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="why_text">&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+	<!-- Services -->
+
+
+
+	<div class="team">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">Services</div>
+					<div class="section_title"><h2>Our Services</h2></div>
+				</div>
+			</div>
+			<div class="row team_row">
+				
+				<!-- Team Item -->
+
+<!--					{% for i in result1 %}-->
+
+<!--				<div class="col-xl-3 col-md-6 team_col">-->
+<!--					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">-->
+<!--						<div class="team_image"><img src="{{i.image1.url}}" alt=""></div>-->
+<!--						<div class="team_content">-->
+<!--							<div class="team_title"><a href="#">{{i.name1}}</a></div>-->
+<!--							<div class="team_text">-->
+<!--								<p>{{i.details1}}</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				{% endfor %}-->
+
+
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/save.jpg' %}" alt=""></div>
+						<div class="team_content">
+							<div class="team_title"><a href="#">Savings</a></div>
+							<div class="team_text">
+								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/ins.png' %}" alt=""></div>
+						<div class="team_content">
+							<div class="team_title"><a href="#">Insurance</a></div>
+							<div class="team_text">
+								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/loan.jpg' %}" alt=""></div>
+						<div class="team_content">
+							<div class="team_title"><a href="#">Loans</a></div>
+							<div class="team_text">
+								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/footer_1.jpg' %}" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="newsletter">
+						<div class="newsletter_title_container text-center">
+							<div class="newsletter_title">Subscribe to our newsletter to get the latest trends & news</div>
+							<div class="newsletter_subtitle">Join our database NOW!</div>
+						</div>
+						<div class="newsletter_form_container">
+							<form action="#" class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between" id="newsletter_form">
+								<div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
+									<div><input type="text" class="newsletter_input newsletter_input_name" id="newsletter_input_name" placeholder="Name" required="required"><div class="input_border"></div></div>
+									<div><input type="email" class="newsletter_input newsletter_input_email" id="newsletter_input_email" placeholder="Your e-mail" required="required"><div class="input_border"></div></div>
+								</div>
+								<div><button class="newsletter_button">subscribe</button></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row footer_contact_row">
+				<div class="col-xl-10 offset-xl-1">
+					<div class="row">
+
+						<!-- Footer Contact Item -->
+						<div class="col-xl-4 footer_contact_col">
+							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+								<div class="footer_contact_icon"><img src="{% static 'images/sign.svg' %}" alt=""></div>
+								<div class="footer_contact_title">give us a call</div>
+								<div class="footer_contact_list">
+									<ul>
+										<li>Office Landline: +44 5567 32 664 567</li>
+										<li>Mobile: +44 5567 89 3322 332</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Footer Contact Item -->
+						<div class="col-xl-4 footer_contact_col">
+							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+								<div class="footer_contact_icon"><img src="{% static 'images/trekking.svg' %}" alt=""></div>
+								<div class="footer_contact_title">come & drop by</div>
+								<div class="footer_contact_list">
+									<ul style="max-width:190px">
+										<li>4124 Barnes Street, Sanford, FL 32771</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Footer Contact Item -->
+						<div class="col-xl-4 footer_contact_col">
+							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+								<div class="footer_contact_icon"><img src="{% static 'images/around.svg' %}" alt=""></div>
+								<div class="footer_contact_title">send us a message</div>
+								<div class="footer_contact_list">
+									<ul>
+										<li>youremail@gmail.com</li>
+										<li>Office@yourbusinessname.com</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
+
+	</footer>
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/about.js' %}"></script>
+</body>
+</html>

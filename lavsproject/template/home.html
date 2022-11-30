@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Details Form</title>
+</head>
+<body>
+<h2>Personal Details Form</h2>
+
+
+<form method="post" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#id_district").change(function () {
+        const url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+        const districtId = $(this).val();  // get the selected district ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'district_id': districtId       // add the district id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+                /*
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (city) {
+                    html_data += `<option value="${city.id}">${city.name}</option>`
+                });
+                console.log(html_data);
+                $("#id_city").html(html_data);
+                */
+            }
+        });
+
+    });
+</script>
+<form action="form" method = "post">
+        {% csrf_token %}
+    
+    <input type="date"  name = "DOB"  placeholder=" Enter your DOB"><br>
+    <input type="number"  name = "age" placeholder=" Enter your age"><br>
+
+    <input type="text"  name = "gender" placeholder=" Gender"><br>
+    <input type="number"  name = "Phone number"  placeholder=" Enter your Phone number"><br>
+    <input type="email"  name = "email" placeholder=" Enter your mail id"><br>
+    <input type="text"  name = "address" placeholder=" Enter your address"><br>
+
+
+
+
+ <div class="container" style="padding:20px;">
+    <div class="col-md-12 well">
+        <h3 class="text-primary">Account Type</h3>
+        <hr style="border-top:1px dotted #ccc;"/>
+  {% block content %}
+
+        <p><b>Account: </b>
+         <select name="city" class="form-control">
+   {% for results in account %}
+            <option value="{{ results.id}}">{{ results.name}}</option>
+   {% endfor %}
+         </select>
+</p>
+
+        {% endblock %}
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<h2> Materials Provided</h2>
+    <div class="form-check">
+        <input type="checkbox" value="A" id="1" name="A">
+        <label for="1">Debit Card</label>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" value="B" id="2" name="B">
+        <label for="2">Credit Card</label>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" value="C" id="3" name="C">
+        <label for="3">Cheque Book</label>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" value="D" id="4" name="D">
+        <label for="4">Mobile Banking</label>
+    </div>
+
+    <input type="submit" value="Submit">
+
+
+    <li><a  href="logout"> Logout</a></li>
+</form>
+
+
+
+</body>
+</html>

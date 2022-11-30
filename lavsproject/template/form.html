@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body style = "background-color: pink;">
+<h2>Form</h2>
+<form action="form" method = "post">
+    {% csrf_token %}
+    <input type="text"  name = "username" placeholder=" Enter your username"><br>
+    <input type="date"  name = "DOB"  placeholder=" Enter your DOB"><br>
+    <input type="number"  name = "age" placeholder=" Enter your age"><br>
+
+    <input type="text"  name = "gender" placeholder=" Gender"><br>
+    <input type="number"  name = "Phone number"  placeholder=" Enter your Phone number"><br>
+    <input type="email"  name = "email" placeholder=" Enter your mail id"><br>
+    <input type="text"  name = "address" placeholder=" Enter your address"><br>
+</body>
+
+
+
+</html>
